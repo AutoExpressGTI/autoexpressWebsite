@@ -25,3 +25,21 @@ body {
     text-wrap: balance;
   }
 }
+.styleBar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.open .styleBar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.open .styleBar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .styleBar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
