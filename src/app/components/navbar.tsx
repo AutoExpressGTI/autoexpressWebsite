@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence, Variants, } from "framer-motion"
+import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
 
@@ -28,8 +29,9 @@ const Links: {text: string, href:string}[] = [
 ];
 return(
     <>
-    <div className="w-full h-[80px] flex items-center justify-around  bg-black">
-        <div className="text-white">
+    <nav className="w-full h-[80px] flex items-center justify-around  bg-black fixed">
+        <div className="text-white flex items-center justify-center gap-4">
+            <Image alt="Logo AutoExpress" src='/logoAutoExpress.png' width={50} height={50}/>
             <h2>Auto <span className="text-red-600">Express.</span></h2>
         </div>
         
@@ -70,7 +72,7 @@ return(
             <div className={`styleBar transition-opacity ${navbarOpen ? 'opacity-0' : ''}`}></div>
             <div className={`styleBar transition-transform ${navbarOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
         </div>
-    </div>
+    </nav>
     </>
 )
 }
