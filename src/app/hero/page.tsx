@@ -3,6 +3,7 @@ import React from 'react'
 import Faq from '../components/faq'
 import Servicios from '../components/servicios'
 import Testimonios from '../components/testimonios'
+import VisionMision from '../components/visionMision'
 
 const Hero = () => {
   return (
@@ -22,6 +23,7 @@ const Hero = () => {
       {/* Servicios Section */}
       <div id="servicios" className="w-full py-12 bg-white">
         <Servicios />
+        <VisionMision/> 
       </div>
 
       {/* Testimonios Section */}
