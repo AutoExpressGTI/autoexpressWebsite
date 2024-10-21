@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export const Footer = () => {
@@ -8,6 +9,7 @@ export const Footer = () => {
             <p><span>Enlaces a redes sociales:</span> Se añadirán iconos y enlaces a plataformas como Facebook, Instagram para fomentar la conexión en línea.</p>
             <p><span>Enlaces rápidos:</span> Incluye acceso a las secciones principales, como Inicio, Servicios, Testimonios, y el Blog.</p>
             <p><span>Política de Privacidad: </span>Enlace directo a la política de privacidad, donde se detalla cómo se manejan y protegen los datos de los usuarios.</p>
+            <Link href='/privacidad' className='text-red-800'>Privacidad Y Datos</Link>
     </div>
   )
 }

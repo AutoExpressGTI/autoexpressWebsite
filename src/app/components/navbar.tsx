@@ -31,8 +31,12 @@ return(
     <>
     <nav className="w-full h-[80px] flex items-center justify-around  bg-black fixed">
         <div className="text-white flex items-center justify-center gap-4">
-            <Image alt="Logo AutoExpress" src='/logoAutoExpress.png' width={50} height={50}/>
-            <h2>Auto <span className="text-red-600">Express.</span></h2>
+            <Link href='/'>
+             <Image alt="Logo AutoExpress" src='/logoAutoExpress.png' width={50} height={50}/>
+            </Link>
+            <Link href='/'>
+             <h2>Auto <span className="text-red-600">Express.</span></h2>
+            </Link>
         </div>
         
         <AnimatePresence>
