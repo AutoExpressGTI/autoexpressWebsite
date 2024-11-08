@@ -15,9 +15,17 @@ const BlogCards = () => {
       content: 'El cobro coactivo es la posibilidad de la administración pública para cobrar deudas a su favor, como embargos de cuentas bancarias. La Secretaría de Movilidad tiene un plazo de 3 años desde el hecho para iniciar este proceso.'
     },
     {
-      title: '¿Qué es Caducidad y Prescripción?',
-      content: 'La caducidad es el vencimiento del plazo de un año para que la Secretaría emita la resolución. La prescripción se refiere a la pérdida del derecho de la autoridad a exigir el pago de una multa después de 3 años sin cobro coactivo.'
+      title: '¿Qué es una Resolución?',
+      content: 'Una resolución es un acto administrativo emitido por la autoridad de tránsito que determina una decisión oficial sobre una infracción de tránsito y establece las sanciones o multas correspondientes.'
     },
+    {
+      title: '¿Qué es la Caducidad?',
+      content: 'La caducidad es el vencimiento del plazo de un año que tiene la Secretaría de Movilidad para emitir una resolución que determine la sanción de una infracción de tránsito. Pasado este tiempo sin emisión de resolución, el proceso no puede continuar.'
+    },
+    {
+      title: '¿Qué es la Prescripción?',
+      content: 'La prescripción se refiere a la pérdida del derecho de la autoridad a exigir el pago de una multa de tránsito después de 3 años si no se ha iniciado un proceso de cobro coactivo. Esto implica que la deuda ya no puede ser legalmente cobrada.'
+    }
   ];
 
   return (
