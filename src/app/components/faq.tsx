@@ -28,7 +28,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center py-16 bg-gray-100">
+    <div className="w-full flex flex-col items-center py-16 bg-gray-100" id='faq'>
       <h1 className="text-4xl font-bold mb-10 text-indigo-700">Preguntas Frecuentes (FAQ)</h1>
       <div className="w-full max-w-4xl">
         {faqData.map((item, index) => (

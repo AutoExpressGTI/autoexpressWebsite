@@ -4,6 +4,8 @@ import { motion, AnimatePresence, Variants, } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
+import { FaWhatsapp } from "react-icons/fa6";
+
 
 
 const Navbar: React.FC = () =>{
@@ -22,61 +24,140 @@ const Navbar: React.FC = () =>{
         exit: { opacity: 0, x: 20, transition: { duration: 1 } }
       };
 
+    const desktopLinkVariants: Variants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+        delay: i * 0.2,
+        duration: 0.5,
+        ease: "easeOut"
+        },
+    }),
+    };
+
+    const fadeUpVariants: Variants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+        delay: i * 0.2,
+        duration: 0.6,
+        ease: "easeOut",
+        },
+    }),
+    };
+
 const Links: {text: string, href:string}[] = [
     {text: 'Inicio', href: '/'},
-    {text: 'Blog', href: 'blog'},
-    {text: 'Contacto', href: '/Contacto'}
+    {text: 'Asi funciona', href: '/proceso'},
+    {text: 'Preguntas frecuentes', href: '#faq'}
 ];
 return(
     <>
-    <nav className="w-full h-[80px] flex items-center justify-around  bg-black fixed">
-        <div className="text-white flex items-center justify-center gap-4">
-            <Link href='/'>
-             <Image alt="Logo AutoExpress" src='/logoAutoExpress.png' width={50} height={50}/>
-            </Link>
-            <Link href='/'>
-             <h2>Auto <span className="text-red-600">Express.</span></h2>
-            </Link>
-        </div>
-        
-        <AnimatePresence>
-            {navbarOpen && (
-                <motion.ul
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="w-full h-[100vh] flex flex-col items-center justify-around gap-6 absolute top-0 left-0 bg-black text-white xl:hidden"
+    <header className="w-full bg-[var(--background)] fixed">
+        <nav className="max-w-[1200px] m-auto h-[80px] flex items-center justify-around">
+            {/* Logos */}
+            <motion.div
+                className="text-white flex items-center justify-center gap-4"
+                initial="hidden"
+                animate="visible"
+                variants={fadeUpVariants}
+                custom={0}
                 >
-                {Links.map((link, id)=>(
-                    <motion.li 
-                    key={id}
-                    custom={id}
-                    variants={menuVariants}
+                <Link href="/">
+                    <motion.div variants={fadeUpVariants} custom={0}>
+                    <Image alt="Logo AutoExpress" src="/logoAutoExpress.webp" width={50} height={50} />
+                    </motion.div>
+                </Link>
+                <Link href="/">
+                    <motion.h2
+                    className="logoName text-[--black] font-semibold"
+                    variants={fadeUpVariants}
+                    custom={1}
                     >
-                        <Link href={link.href}>{link.text}</Link>
-                    </motion.li>
-                ))}
-                </motion.ul>
-            )}
-        </AnimatePresence>
+                    Auto<span className="text-[--black] font-semibold">Express.</span>
+                    </motion.h2>
+                </Link>
+            </motion.div>
 
-        <ul className="hidden sm:flex text-white gap-6">
-            {Links.map((link, index)=>(
-                <li key={index}>
-                    <Link href={link.href}>{link.text}</Link>
-                </li>
+            {/* links pc */}
+            <motion.ul
+            className="hidden lg:flex text-[var(--black)] font-semibold gap-6"
+            initial="hidden"
+            animate="visible"
+            >
+            {Links.map((link, index) => (
+                <motion.li
+                key={index}
+                custom={index}
+                variants={desktopLinkVariants}
+                >
+                <Link
+                    className="relative inline-block p-1 text-[var(--black)] before:absolute before:bottom-0 before:left-0 before:h-[4px] before:w-0 before:bg-[var(--green)] before:transition-all before:duration-300 hover:before:w-full"
+                    href={link.href}
+                >
+                    {link.text}
+                </Link>
+                </motion.li>
             ))}
-        </ul>
+            </motion.ul> 
 
-        <div 
-            onClick={()=> setNavbarOpen(!navbarOpen)}
-            className={`absolute top-0 right-0 m-8 z-10 cursor-pointer flex flex-col items-center space-y-1 ${navbarOpen ? "open":""} xl:hidden`}
-        >
-            <div className={`styleBar transition-transform ${navbarOpen ? "rotate-45 translate-y-2 ":""}`}></div>
-            <div className={`styleBar transition-opacity ${navbarOpen ? 'opacity-0' : ''}`}></div>
-            <div className={`styleBar transition-transform ${navbarOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
-        </div>
-    </nav>
+                <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeUpVariants}
+                custom={2}
+                >
+                    <Link 
+                        target="_blank"
+                        href="https://api.whatsapp.com/send?phone=573002172285&text=Hola%2C%20quiero%20asesor%C3%ADa%20%F0%9F%98%83">
+                        <button  className="flex justify-center items-center gap-3 border-2 border-[var(--green)] hover:border-[#59ac1e7b] p-1 rounded-md px-4">
+                            Contáctanos <FaWhatsapp />
+                        </button>
+                    </Link> 
+                </motion.div>
+
+        {/* Mobile navbar */}
+                <AnimatePresence>
+                    {navbarOpen && (
+                        <motion.ul
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            className="w-full h-[100vh] flex flex-col items-center justify-center gap-8 absolute top-0 left-0 bg-[var(--background)] text-[var(--black)] font-bold xl:hidden"
+                        >
+                        {Links.map((link, id)=>(
+                            <motion.li 
+                            key={id}
+                            custom={id}
+                            variants={menuVariants}
+                            onClick={ ()=> setNavbarOpen(false)}
+                            >
+                                <Link href={link.href}>{link.text}</Link>
+                            </motion.li>
+                        ))}
+                        </motion.ul>
+                    )}
+                </AnimatePresence>
+
+
+
+                <motion.div
+                onClick={() => setNavbarOpen(!navbarOpen)}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className={`top-0 right-0 m-4 z-10 cursor-pointer flex flex-col items-center space-y-1 ${navbarOpen ? "open" : ""} lg:hidden xl:hidden`}
+                >
+                <div className={`styleBar transition-transform ${navbarOpen ? "rotate-45 translate-y-2" : ""}`}></div>
+                <div className={`styleBar transition-opacity ${navbarOpen ? 'opacity-0' : ''}`}></div>
+                <div className={`styleBar transition-transform ${navbarOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+                </motion.div>
+        </nav>
+    </header>
     </>
 )
 }

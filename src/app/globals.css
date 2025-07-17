@@ -2,33 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+scroll-behavior: smooth;
+}
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #E8E8E8;
+    --foreground: #888787;
+    --gray: #D9D9D9;
+    --green: #58AC1E;
+    --yellow: #f9b90f;
+    --red: #dc5023;
+    --black: #202020;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #E8E8E8;
+    --foreground: #888787;
+    --gray: #D9D9D9;
+    --green: #58AC1E;
+    --yellow: #f9b90f;
+    --red: #dc5023;
+    --black: #202020;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+
 }
 .styleBar {
   width: 30px;
   height: 3px;
-  background-color: white;
+  background-color: #202020;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -43,3 +53,11 @@ body {
 .open .styleBar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
+
+/* Navbar */
+
+  @media (max-width: 425px) {
+    .logoName{
+      display: none;
+    }
+  }
