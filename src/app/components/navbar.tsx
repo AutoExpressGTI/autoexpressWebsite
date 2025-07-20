@@ -57,7 +57,7 @@ const Links: {text: string, href:string}[] = [
 ];
 return(
     <>
-    <header className="w-full bg-[var(--background)] fixed">
+    <header className="w-full bg-[var(--background)] fixed z-50">
         <nav className="max-w-[1200px] m-auto h-[80px] flex items-center justify-around">
             {/* Logos */}
             <motion.div
@@ -85,7 +85,7 @@ return(
 
             {/* links pc */}
             <motion.ul
-            className="hidden lg:flex text-[var(--black)] font-semibold gap-6"
+            className="hidden lg:flex text-[var(--black)]  gap-6"
             initial="hidden"
             animate="visible"
             >
@@ -114,7 +114,7 @@ return(
                     <Link 
                         target="_blank"
                         href="https://api.whatsapp.com/send?phone=573002172285&text=Hola%2C%20quiero%20asesor%C3%ADa%20%F0%9F%98%83">
-                        <button  className="flex justify-center items-center gap-3 border-2 border-[var(--green)] hover:border-[#59ac1e7b] p-1 rounded-md px-4">
+                        <button  className="hidden lg:flex justify-center items-center gap-3 border border-[var(--green)] hover:border-[#59ac1e7b] p-1 rounded-md bg-[#888787]/30 px-4">
                             Contáctanos <FaWhatsapp />
                         </button>
                     </Link> 
