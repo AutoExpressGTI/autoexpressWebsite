@@ -87,7 +87,7 @@ const Hero = () => {
         </motion.article>
 
         {/* Tooltip WhatsApp Mobile */}
-        <div className="absolute bottom-6 right-6 z-50 lg:hidden">
+        <div className="absolute bottom-6 right-6 lg:hidden">
           <WhatsAppTooltip />
         </div>
 

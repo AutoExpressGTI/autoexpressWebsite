@@ -57,7 +57,7 @@ const Links: {text: string, href:string}[] = [
 ];
 return(
     <>
-    <header className="w-full bg-[var(--background)] fixed z-50">
+    <header className="w-full bg-[var(--background)] fixed z-50 shadow-2xl">
         <nav className="max-w-[1200px] m-auto h-[80px] flex items-center justify-around">
             {/* Logos */}
             <motion.div

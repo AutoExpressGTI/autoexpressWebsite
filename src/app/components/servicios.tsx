@@ -1,52 +1,80 @@
-import React from 'react'
+'use client';
+
+import Image from 'next/image';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import SimpleSlider from './simple-slider';
+import Semaforo from "../../../public/semaforo.webp";
+import camara from "../../../public/camara.webp";
+import multa from "../../../public/multa.webp";
+import alcohol from "../../../public/alcohol.webp";
+import id from "../../../public/idConduciendo.webp";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const AnimatedArticle = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  return (
+    <motion.article
+      ref={ref}
+      className={className}
+      variants={fadeUp}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+    >
+      {children}
+    </motion.article>
+  );
+};
 
 const Servicios = () => {
   return (
-    <div className="w-full py-16 bg-gradient-to-r from-red-500 to-blue-600 text-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl font-semibold text-center mb-8">Nuestros Servicios</h2>
+    <section className="w-full py-16 bg-[var(--background)]">
+      <div className="max-w-[1200px] m-auto gap-2 flex flex-col justify-center items-center lg:flex-row">
         
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
-          {/* Servicio Fotomultas */}
-          <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Fotomultas</h3>
-            <p className="text-lg">
-              Asesoría y asistencia en la impugnación de fotomultas, ayudando a los conductores a reducir o eliminar estas sanciones, 
-              con un enfoque en lograr un ahorro significativo. A través de un análisis detallado y estrategias personalizadas, 
-              buscamos proteger tus derechos.
-            </p>
+        <AnimatedArticle className="hidden w-full px-4 lg:w-1/3 gap-4 md:flex xl:flex-col justify-center items-center">
+          <div className="flex flex-col max-w-[300px] justify-center items-center gap-2 p-2">
+            <Image src={camara} alt="Camara foto multa" width={100} height={100} />
+            <h3 className="font-bold">Fotomultas</h3>
+            <p className="text-center">Impugnación con ahorro y estrategia legal personalizada.</p>
           </div>
 
-          {/* Servicio Comparendos */}
-          <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Comparendos</h3>
-            <p className="text-lg">
-              Orientación y soluciones para impugnar comparendos de tránsito, facilitando el proceso y ofreciendo alternativas legales 
-              para resolver estas situaciones. Nuestro equipo te guiará paso a paso para garantizar los mejores resultados posibles.
-            </p>
+          <div className="flex flex-col max-w-[300px] justify-center items-center gap-2 p-2">
+            <Image src={multa} alt="Comparendo" width={100} height={100} />
+            <h3 className="font-bold">Comparendos</h3>
+            <p>Alternativas legales, guía paso a paso.</p>
+          </div>
+        </AnimatedArticle>
+
+        <SimpleSlider />
+
+        <AnimatedArticle className="hidden lg:w-1/3 lg:flex justify-center items-center">
+          <div className="rounded-lg overflow-hidden">
+            <Image src={Semaforo} alt="Semaforo" width={300} height={400} className="rounded-lg" />
+          </div>
+        </AnimatedArticle>
+
+        <AnimatedArticle className="hidden w-full px-4 lg:w-1/3 gap-4 md:flex xl:flex-col justify-center items-center">
+          <div className="max-w-[300px] flex flex-col justify-center items-center gap-2 p-2">
+            <Image src={alcohol} alt="Alcoholemia" width={100} height={100} />
+            <h3 className="font-bold">Alcoholemia</h3>
+            <p className="text-center">Defensa integral para mitigar sanciones.</p>
           </div>
 
-          {/* Servicio Acuerdos de Pagos */}
-          <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Acuerdos de Pagos</h3>
-            <p className="text-lg">
-              Opciones de acuerdos de pagos flexibles para aquellos que enfrentan sanciones elevadas, proporcionando tranquilidad 
-              financiera y accesibilidad para el cliente. Buscamos soluciones personalizadas y adaptadas a tu situación.
-            </p>
+          <div className="max-w-[300px] flex flex-col justify-center items-center gap-2 p-2">
+            <Image src={id} alt="Reactivación de Licencia" width={100} height={100} />
+            <h3 className="font-bold">Reactivación de Licencia</h3>
+            <p className="text-center">Asesoría completa. Tiempo estimado: 3 a 4 meses.</p>
           </div>
-
-          {/* Servicio Casos de Alcoholemia */}
-          <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold mb-4">Casos de Alcoholemia</h3>
-            <p className="text-lg">
-              Defensa legal en casos de alcoholemia, con asesoría integral y personalizada para cada situación. Buscamos mitigar los 
-              efectos legales y económicos de este tipo de infracciones a través de una defensa sólida y estrategia adecuada.
-            </p>
-          </div>
-        </div>
+        </AnimatedArticle>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Servicios
+export default Servicios;

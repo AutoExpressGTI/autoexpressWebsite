@@ -32,7 +32,7 @@ export default function WhatsAppTooltip() {
   }, [])
 
   return (
-    <div className=" bottom-6 right-6 z-40 flex items-center gap-3">
+    <div className=" bottom-6 right-6 z-10 flex items-center gap-3">
       {/* Tooltip de texto que aparece y desaparece hacia la izquierda */}
       <div
         className={`
