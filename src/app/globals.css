@@ -76,3 +76,39 @@ body{
       font-size: 17px;
     }
   }
+
+  /* Proceso reactivacion */
+
+
+   @media (max-width: 600px) {
+
+    .proceso-container{
+      padding: 10px 100px;
+    }
+  }
+   @media (max-width: 500px) {
+
+    .proceso-container{
+      padding: 10px 70px;
+    }
+  }
+ @media (max-width: 425px) {
+
+    .proceso-container{
+      padding: 10px 40px;
+    }
+  }
+
+ @media (max-width: 375px) {
+
+    .proceso-container{
+      padding: 10px 20px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .proceso-container{
+      padding: 10px;
+
+    }
+  }

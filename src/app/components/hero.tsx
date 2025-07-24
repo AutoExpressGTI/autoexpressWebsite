@@ -55,7 +55,7 @@ const Hero = () => {
               Soluciones legales
             </motion.span>
             <motion.span
-              className="bg-[var(--yellow)] py-1 text-white font-semibold rounded-lg text-3xl lg:text-4xl xl:text-5xl text-center lg:text-start"
+              className="bg-[var(--yellow)] p-1 text-white font-semibold rounded-lg text-3xl lg:text-4xl xl:text-5xl text-center lg:text-start"
               variants={fadeInUp}
             >
               en tránsito:
