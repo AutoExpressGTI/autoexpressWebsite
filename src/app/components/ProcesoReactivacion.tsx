@@ -1,22 +1,43 @@
 'use client'
 
 import Link from 'next/link'
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { FaWhatsapp } from 'react-icons/fa6'
 import { motion, useAnimation, useInView } from 'framer-motion'
-import { useEffect } from 'react'
 
-const procesoAnim = {
-  hidden: { opacity: 0, y: 50 },
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
       delay: i * 0.2,
-      ease: 'easeOut'
-    }
-  })
+      ease: 'easeOut',
+    },
+  }),
+}
+
+const AnimatedItem = ({ children, index }: { children: React.ReactNode, index: number }) => {
+  const ref = useRef(null)
+  const controls = useAnimation()
+  const inView = useInView(ref, { once: true, margin: '0px 0px -50px 0px' })
+
+  useEffect(() => {
+    if (inView) controls.start('visible')
+  }, [inView, controls])
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={fadeInUp}
+      initial="hidden"
+      animate={controls}
+      custom={index}
+    >
+      {children}
+    </motion.div>
+  )
 }
 
 const ProcesoPaso = ({ children, index }: { children: React.ReactNode, index: number }) => {
@@ -33,7 +54,7 @@ const ProcesoPaso = ({ children, index }: { children: React.ReactNode, index: nu
   return (
     <motion.article
       ref={ref}
-      variants={procesoAnim}
+      variants={fadeInUp}
       initial="hidden"
       animate={controls}
       custom={index}
@@ -49,10 +70,24 @@ const ProcesoReactivacion = () => {
     <section className='w-full bg-[var(--background)] py-10'>
       <div className="max-w-[1200px] m-auto flex flex-col gap-8 ">
         <article className='flex flex-col justify-center items-center gap-8 p-4'>
-          <h1 className='font-bold text-center text-2xl'>Nosotros te ayudamos:</h1>
-          <p className='text-center max-w-[700px]'>Recupera tu licencia sin estrés. Evaluamos tu caso con base en el expediente de la Secretaría de Tránsito y, si es viable, te acompañamos durante todo el proceso (3 a 4 meses).</p>
-          <p className='font-bold text-center max-w-[700px]'>✅ En cada gestión te entregamos el radicado oficial, a diferencia de otras entidades.</p>
-          <p className='font-bold text-center max-w-[700px]'>ℹ️ Un trámite puede tardarse mínimo 15 días hábiles hasta 45 días hábiles según la cantidad de instancias.</p>
+          <AnimatedItem index={0}>
+            <h1 className='font-bold text-center text-2xl'>Nosotros te ayudamos:</h1>
+          </AnimatedItem>
+          <AnimatedItem index={1}>
+            <p className='text-center max-w-[700px]'>
+              Recupera tu licencia sin estrés. Evaluamos tu caso con base en el expediente de la Secretaría de Tránsito y, si es viable, te acompañamos durante todo el proceso (3 a 4 meses).
+            </p>
+          </AnimatedItem>
+          <AnimatedItem index={2}>
+            <p className='font-bold text-center max-w-[700px]'>
+              ✅ En cada gestión te entregamos el radicado oficial, a diferencia de otras entidades.
+            </p>
+          </AnimatedItem>
+          <AnimatedItem index={3}>
+            <p className='font-bold text-center max-w-[700px]'>
+              ℹ️ Un trámite puede tardarse mínimo 15 días hábiles hasta 45 días hábiles según la cantidad de instancias.
+            </p>
+          </AnimatedItem>
         </article>
 
         <article className='w-full flex justify-center items-center'>
@@ -60,7 +95,11 @@ const ProcesoReactivacion = () => {
             <div className="absolute flex justify-center items-center w-[400px] h-[400px] bg-[url('/logoAutoExpress.webp')] bg-center bg-no-repeat bg-cover opacity-10"></div>
 
             <h2 className='text-4xl font-bold z-10'>¿Cómo funciona el proceso?</h2>
-            <Link href="https://api.whatsapp.com/send?phone=573002172285&text=Hola%2C%20quiero%20asesor%C3%ADa%20%F0%9F%98%83" target="_blank" className='z-10'>
+            <Link
+              href="https://api.whatsapp.com/send?phone=573002172285&text=Hola%2C%20quiero%20asesor%C3%ADa%20%F0%9F%98%83"
+              target="_blank"
+              className='z-10'
+            >
               <button className="hidden items-center justify-center md:flex gap-2 max-w-[400px] bg-[var(--green)] p-4 mx-1 rounded-lg text-white lg:text-1xl xl:text-2xl">
                 <FaWhatsapp />
                 Escríbenos por WhatsApp
@@ -69,13 +108,12 @@ const ProcesoReactivacion = () => {
           </div>
 
           <div className="proceso-container flex flex-col p-4 justify-center items-center max-w-[500px]">
-
-            {[ // pasos del proceso
+            {[
               "Revisamos tu caso <br /> (viabilidad)",
               "Diagnóstico legal y <br /> opciones",
               "Si el resultado es a favor <br /> → pagas honorarios",
               "Si es negativo <br /> → solo asumes el trámite",
-              "Si no se puede trabajar, <br /> también te lo decimos"
+              "Si no se puede trabajar, <br /> también te lo decimos",
             ].map((texto, i) => (
               <ProcesoPaso key={i} index={i}>
                 <div className="flex justify-start gap-5 items-center">
@@ -85,7 +123,6 @@ const ProcesoReactivacion = () => {
                 <div className={`w-1 ${i === 4 ? "h-14" : "h-10"} bg-[var(--green)] ml-8`}></div>
               </ProcesoPaso>
             ))}
-
           </div>
         </article>
       </div>
