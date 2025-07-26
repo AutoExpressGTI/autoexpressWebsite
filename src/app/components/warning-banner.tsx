@@ -43,7 +43,7 @@ export default function Component() {
 
 
       <div className="w-full bg-[var(--red)] overflow-hidden">
-        <div className="flex banner-scroll">
+        <div className="flex banner-scroll min-w-max">
           <div className="flex items-center gap-3 text-white font-medium text-sm md:text-base whitespace-nowrap px-4 py-3">
             <AlertTriangle className="h-5 w-5 flex-shrink-0" />
             <span>
