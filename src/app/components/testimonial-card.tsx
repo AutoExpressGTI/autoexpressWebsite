@@ -23,7 +23,7 @@ export default function TestimonialCard({ testimonial, index }: TestimonialCardP
           stiffness: 200,
         }}
         viewport={{ once: true }}
-        className={`text-lg ${i < rating ? "text-yellow-400" : "text-gray-300"}`}
+        className={`text-lg text-yellow ${i < rating ? "text-yellow-400" : "text-gray-300"}`}
       >
         ★
       </motion.span>

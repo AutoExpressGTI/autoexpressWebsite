@@ -3,6 +3,7 @@
 import React, { useRef } from 'react'
 import { motion, useInView } from "framer-motion";
 import { IoMdArrowRoundForward } from "react-icons/io";
+import Link from 'next/link';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -34,10 +35,12 @@ const ComparendoBanner = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <button className='flex items-center justify-center gap-2 md:text-2xl'>
+        <Link href="/proceso">
+           <button className='flex items-center justify-center gap-2 md:text-2xl'>
             Conoce el proceso legal
             <IoMdArrowRoundForward />
           </button>
+        </Link>
         </motion.article>
 
       </div>

@@ -151,7 +151,7 @@ export default function Footer() {
               whileHover={{ color: "#374151" }}
               className="hover:underline transition-colors duration-200"
             >
-              Desarrollador por <a href="">R10s Agency</a>
+              Desarrollador por R10s Agency
             </motion.a>
           </div>
 

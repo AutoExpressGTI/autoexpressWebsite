@@ -15,7 +15,7 @@ export const faqs: FAQ[] = [
     id: 2,
     question: "¿Cuánto tiempo tiene la Secretaría para notificar una fotomulta?",
     answer:
-      "La Secretaría de Movilidad tiene un plazo máximo de 6 meses para notificar una fotomulta desde la fecha en que se cometió la infracción. Si no se notifica dentro de este término, la multa puede considerarse caduca y perder su validez legal.",
+      "La Secretaría de Movilidad tiene un plazo máximo de 13 días hábiles para notificar una fotomulta desde la fecha en que se cometió la infracción. Si no se notifica dentro de este término, la multa puede considerarse caduca y perder su validez legal.",
   },
   {
     id: 3,
