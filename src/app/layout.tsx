@@ -18,6 +18,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "AutoExpress - Elimina tus Fotomultas con un 90% de Ahorro",
   description: "AutoExpress ofrece asesoría jurídica especializada para impugnar y eliminar fotomultas. Ahorra hasta un 90% y mejora tu historial de conducción fácilmente.",
+    icons: {
+    icon: '/logo.ico',
+  },
   keywords: [
     "fotomultas", 
     "eliminar fotomultas", 
@@ -32,11 +35,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AutoExpress - Asesoría en Fotomultas",
     description: "Asesoría jurídica especializada para eliminar fotomultas con un ahorro de hasta el 90%. Consulta fácil y rápida.",
-    url: "https://autoexpress.com", // Reemplaza con el dominio real
+    url: "https://autoexpressgti.com.co", // Reemplaza con el dominio real
     type: "website",
     images: [
       {
-        url: "https://autoexpress.com/images/social-preview.jpg", // Reemplaza con la URL real de la imagen
+        url: "https://autoexpressgti.com.co/images/social-preview.jpg", // Reemplaza con la URL real de la imagen
         width: 1200,
         height: 630,
         alt: "AutoExpress - Elimina tus Fotomultas"
