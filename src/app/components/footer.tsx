@@ -77,7 +77,7 @@ export default function Footer() {
               className="bg-[var(--green)] hover:bg-green-600 text-white px-6 py-3 rounded-lg flex items-center gap-3 mx-auto md:mx-0 md:ml-auto transition-colors duration-200 mb-4"
             >
               <FaWhatsapp className="w-5 h-5 " />
-              <span className="font-medium">Escríbenos por WhatsApp</span>
+              <a className="font-medium" href="https://api.whatsapp.com/send?phone=573002172285&text=Hola%2C%20quiero%20asesor%C3%ADa%20%F0%9F%98%83" target="_blank">Escríbenos por WhatsApp</a>
             </motion.button>
 
             {/* Social Media Icons */}
@@ -92,7 +92,8 @@ export default function Footer() {
               </motion.a>
 
               <motion.a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=100083251786387&locale=es_LA"
+                target="_blank"
                 whileHover={{ scale: 1.1, rotate: -5 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-shadow duration-200"
@@ -101,7 +102,7 @@ export default function Footer() {
               </motion.a>
 
               <motion.a
-                href="#"
+                href="mailto:autoexpressgti@gmail.com"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-shadow duration-200"
@@ -131,7 +132,7 @@ export default function Footer() {
         >
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-center md:text-left">
             <motion.a
-              href="#"
+              href="/politicas"
               whileHover={{ color: "#374151" }}
               className="hover:underline transition-colors duration-200"
             >
@@ -139,19 +140,19 @@ export default function Footer() {
             </motion.a>
             <span className="hidden sm:inline">|</span>
             <motion.a
-              href="#"
+              href="/terminos"
               whileHover={{ color: "#374151" }}
               className="hover:underline transition-colors duration-200"
             >
               Términos y Condiciones
             </motion.a>
             <span className="hidden sm:inline">|</span>
+            <p className=" sm:inline">Desarrollador por</p>
             <motion.a
-              href="#"
-              whileHover={{ color: "#374151" }}
+              href="https://www.r10sagency.com/"
+              target="_blank" 
               className="hover:underline transition-colors duration-200"
-            >
-              Desarrollador por R10s Agency
+            > <strong>r10sagency.com</strong>
             </motion.a>
           </div>
 
