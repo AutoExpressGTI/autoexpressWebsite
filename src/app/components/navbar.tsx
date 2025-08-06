@@ -78,7 +78,7 @@ return(
                     variants={fadeUpVariants}
                     custom={1}
                     >
-                    Auto<span className="text-[--black] font-semibold">ExpressGTI.</span>
+                    Auto <span className="text-[--black] font-semibold">Express GTI.</span>
                     </motion.h2>
                 </Link>
             </motion.div>

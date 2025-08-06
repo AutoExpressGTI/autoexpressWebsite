@@ -57,7 +57,7 @@ export default function Testimonios() {
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage)
 
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-gray-100">
+    <section className="w-full py-12 md:py-16 lg:py-20 bg-[var(--gray)]">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
