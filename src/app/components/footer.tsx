@@ -136,7 +136,7 @@ export default function Footer() {
               whileHover={{ color: "#374151" }}
               className="hover:underline transition-colors duration-200"
             >
-              Política de Privacidad
+              Tratamiento de Datos
             </motion.a>
             <span className="hidden sm:inline">|</span>
             <motion.a

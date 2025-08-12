@@ -47,7 +47,7 @@ const Hero = () => {
           animate="visible"
           variants={staggerContainer}
         >
-          <motion.h1 className="flex flex-col gap-1" variants={fadeInUp}>
+          <motion.h1 className="flex flex-col gap-5" variants={fadeInUp}>
             <motion.span
               className="bg-[var(--red)] py-1 p-1 px-2 text-white font-semibold rounded-lg text-3xl lg:text-4xl xl:text-5xl lg:text-start"
               variants={fadeInUp}
