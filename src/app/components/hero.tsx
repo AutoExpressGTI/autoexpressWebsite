@@ -28,7 +28,7 @@ const Hero = () => {
       {/* Imagen de fondo */}
       <article className="w-full lg:w-2/3 h-screen bg-[url('/fondoHero.webp')] bg-cover bg-center bg-no-repeat absolute inset-0"></article>
 
-      <section className="relative flex py-48 lg:py-0 max-w-[1200px] m-auto">
+      <section className="relative flex py-48 lg:py-10 max-w-[1200px] m-auto">
 
         {/* Logo */}
         <motion.article

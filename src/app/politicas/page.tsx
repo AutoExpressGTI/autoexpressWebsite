@@ -6,7 +6,7 @@ const PoliticaPrivacidad: React.FC = () => {
       <h1 className="text-3xl font-bold mb-4">Política de Privacidad y Tratamiento de Datos</h1>
 
       <p className="mb-4">
-       En cumplimiento de la Ley 1581 de 2012 habeas data, AUTO EXPRESS GTI tiene a su disposición la política de tratamiento de datos personales, la cual puede ser consultada en la página principal de la empresa * acerca del sitio  www.autoexpressgti.com.co políticas de protección de Datos Personales.
+       En cumplimiento de la Ley 1581 de 2012 habeas data, AUTO EXPRESS GTI tiene a su disposición la política de tratamiento de datos personales, la cual puede ser consultada en esta misma pagina: www.autoexpressgti.com.co políticas de protección de Datos Personales.
       </p>
 
       <p className="mb-4">

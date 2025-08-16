@@ -8,7 +8,7 @@ import Link from "next/link"
 
 export default function PreguntasFrecuentes() {
   return (
-    <section className="w-full py-12 md:py-16 lg:py-20 bg-gray-100">
+    <section className="w-full py-12 md:py-16 lg:py-20 bg-gray-100" id="faq">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
